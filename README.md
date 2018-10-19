@@ -23,7 +23,7 @@ initialChips            | Initial Chips to be present                     | Arra
 onChangeChips            | To get the value of chips in array                     | Function    | -
 ## Sample
 ```
-![alt Sample](https://github.com/ramprasath25/react-native-chips/demo.gif)
+![alt Sample](https://github.com/ramprasath25/react-native-chips/blob/master/demo.gif)
 ```
 
 ## Contributing
