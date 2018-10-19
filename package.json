@@ -1,0 +1,20 @@
+{
+  "name": "react-native-chips",
+  "version": "1.0.0",
+  "description": "A React Native component which is used to represent array of text. Inspired from material design chips",
+  "main": "./index.js",
+  "keywords": [
+    "react-native-chips",
+    "react-native",
+    "chips",
+    "input-tags",
+    "tags",
+    "selectize"
+  ],
+  "author": "Ramprasath R",
+  "license": "MIT",
+  "dependencies": {
+    "react": "16.3.1",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-30.0.0.tar.gz"
+  }
+}
