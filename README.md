@@ -10,7 +10,7 @@ A React Native component which is used to represent array of text. Inspired from
 ## Usage
 
 ```
-import ReactChipsInput from ('react-native-chips');
+import ReactChipsInput from 'react-native-chips';
 
 <ReactChipsInput label="Enter Fruits" intialChips={["Apple", "orange"]} onChangeChips={(chips) => console.log(chips)} />
 ```
