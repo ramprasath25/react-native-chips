@@ -5,11 +5,11 @@ import React from "react";
 import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 
 const Chips = (props) => {
-    const { value, onPress } = props;
+    const { value, onPress, chipStyle } = props;
     return (
-        <TouchableOpacity style={styles.chip} onPress={onPress}>
+        <TouchableOpacity style={[styles.chip, chipStyle]} onPress={onPress}>
             <View style={{ flexDirection: 'row' }}>
-                <Text style={{ paddingHorizontal: 5 }}>{value}</Text>
+                <Text style={[{ paddingHorizontal: 5 }]}>{value}</Text>
                 <View style={styles.chipCloseBtn}><Text style={styles.chipCloseBtnTxt}>x</Text></View>
             </View>
         </TouchableOpacity>

@@ -2,7 +2,7 @@
  * @author Ramprasath R <ramprasath25@gmail.com>
  */
 import React from 'react';
-import { View, Text, TextInput, StyleSheet } from 'react-native';
+import { View, Text, TextInput, StyleSheet, Alert } from 'react-native';
 import Chips from './chips';
 
 class ReactChipsInput extends React.Component {
@@ -22,22 +22,26 @@ class ReactChipsInput extends React.Component {
         this.setState({
             chips: newArray
         }, () => this.props.onChangeChips && this.props.onChangeChips(this.state.chips));
+        if (this.props.alertRequired) Alert.alert('', 'Removed Successfully')
     }
     handleBlur = () => {
-        if (this.state.inputText !== '') {
+        if (this.state.inputText !== '' && this.state.chips.indexOf(this.state.inputText) === -1) {
             this.setState({
                 chips: [...this.state.chips, this.state.inputText],
                 inputText: "",
                 isFocused: false
             }, () => this.props.onChangeChips && this.props.onChangeChips(this.state.chips));
+            if (this.props.alertRequired) Alert.alert('', 'Added Successfully');
         } else {
             this.setState({
+                inputText: "",
                 isFocused: false
             }, () => this.props.onChangeChips && this.props.onChangeChips(this.state.chips))
+            if (this.props.alertRequired) Alert.alert('Added Successfully', 'Chip Element already present');
         }
     }
     render() {
-        const { label } = this.props;
+        const { label, chipStyle } = this.props;
         const inputLabel = (label) ? label : 'Enter your text'
         const { isFocused, inputText } = this.state;
         const labelStyle = {
@@ -51,10 +55,11 @@ class ReactChipsInput extends React.Component {
             <Chips
                 key={index}
                 value={item}
+                chipStyle={chipStyle}
                 onPress={() => this.removeChip(index)} />
         ));
         return (
-            <View style={{ flex: 1 }}>
+            <View>
                 <View style={{ paddingTop: 18, marginTop: 15 }}>
                     <Text style={labelStyle}>
                         {inputLabel}

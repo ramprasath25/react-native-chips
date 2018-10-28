@@ -12,7 +12,7 @@ A React Native component which is used to represent array of text. Inspired from
 ```
 import ReactChipsInput from 'react-native-chips';
 
-<ReactChipsInput label="Enter Fruits" intialChips={["Apple", "orange"]} onChangeChips={(chips) => console.log(chips)} />
+<ReactChipsInput label="Enter Fruits" initialChips={["Apple", "Orange"]} onChangeChips={(chips) => console.log(chips)} alertRequired={true} chipStyle={{ borderColor: 'blue', backgroundColor: 'grey', fontColor: 'white' }}/>
 ```
 
 ## Properties
@@ -21,6 +21,8 @@ import ReactChipsInput from 'react-native-chips';
  label            | Placeholder for the Text input                     | String    | 'Enter your text'
 initialChips            | Initial Chips to be present                     | Array    | -
 onChangeChips            | To get the value of chips in array                     | Function    | -
+alertRequired            | To trigger alert on adding and removing chips                     | Boolean    | false
+chipStyle            | Changing the style of chip elements                    | Style Object    | -
 ## Sample
 
 ![demo](https://user-images.githubusercontent.com/7905501/47231711-4dbff080-d3eb-11e8-888e-09b7782e8105.gif)
