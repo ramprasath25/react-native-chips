@@ -26,6 +26,7 @@ chipStyle            | Changing the style of chip elements                    | 
 ## Sample
 
 ![demo](https://user-images.githubusercontent.com/7905501/47231711-4dbff080-d3eb-11e8-888e-09b7782e8105.gif)
+![demo_with_alert](https://user-images.githubusercontent.com/7905501/47633624-978ba200-db74-11e8-9ce3-1ad149c719e6.gif)
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
