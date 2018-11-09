@@ -14,6 +14,11 @@ class ReactChipsInput extends React.Component {
             inputText: ''
         }
     }
+    componentWillReceiveProps(nextProps) {
+        this.setState({
+            chips: (nextProps.initialChips) ? nextProps.initialChips : []
+        });
+    }
     handleFocus = () => { this.setState({ isFocused: true }) }
     handleChangeText = (text) => { this.setState({ inputText: text }) }
     removeChip = (index) => {
