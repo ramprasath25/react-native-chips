@@ -46,7 +46,7 @@ class ReactChipsInput extends React.Component {
         }
     }
     render() {
-        const { label, chipStyle } = this.props;
+        const { label, chipStyle, inputStyle } = this.props;
         const inputLabel = (label) ? label : 'Enter your text'
         const { isFocused, inputText } = this.state;
         const labelStyle = {
@@ -70,7 +70,7 @@ class ReactChipsInput extends React.Component {
                         {inputLabel}
                     </Text>
                     <TextInput
-                        style={styles.textInput}
+                        style={[styles.textInput, inputStyle]}
                         onFocus={this.handleFocus}
                         onChangeText={(text) => this.handleChangeText(text)}
                         onSubmitEditing={this.handleBlur}
