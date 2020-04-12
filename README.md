@@ -23,6 +23,7 @@ initialChips            | Initial Chips to be present                     | Arra
 onChangeChips            | To get the value of chips in array                     | Function    | -
 alertRequired            | To trigger alert on adding and removing chips                     | Boolean    | false
 chipStyle            | Changing the style of chip elements                    | Style Object    | -
+inputStyle            | Changing the style of input Text box                    | Style Object    | -
 ## Sample
 
 ![demo](https://user-images.githubusercontent.com/7905501/47231711-4dbff080-d3eb-11e8-888e-09b7782e8105.gif)
