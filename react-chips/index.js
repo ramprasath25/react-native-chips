@@ -14,7 +14,7 @@ class ReactChipsInput extends React.Component {
             inputText: ''
         }
     }
-    componentWillReceiveProps(nextProps) {
+    UNSAFE_componentWillReceiveProps(nextProps) {
         this.setState({
             chips: (nextProps.initialChips) ? nextProps.initialChips : []
         });
@@ -46,16 +46,23 @@ class ReactChipsInput extends React.Component {
         }
     }
     render() {
-        const { label, chipStyle, inputStyle } = this.props;
+        const { label, chipStyle, inputStyle, labelStyle, labelOnBlur } = this.props;
         const inputLabel = (label) ? label : 'Enter your text'
         const { isFocused, inputText } = this.state;
-        const labelStyle = {
+        const defaultLabel = {
             position: 'absolute',
             left: 5,
-            top: !isFocused ? 12 : 1,
-            fontSize: !isFocused ? 20 : 14,
-            color: !isFocused ? '#aaa' : '#000',
+            top: !isFocused ? 12 : 1
         }
+        const defaultLabelTextStyle = {}
+        if(isFocused) {
+            defaultLabelTextStyle['fontSize'] = 14;
+            defaultLabelTextStyle['color'] = '#000'
+        } else {
+            defaultLabelTextStyle['fontSize'] = 20;
+            defaultLabelTextStyle['color'] = '#aaa';
+        }
+        let labelTextStyle = (!isFocused) ? labelStyle : labelOnBlur;
         const chips = this.state.chips.map((item, index) => (
             <Chips
                 key={index}
@@ -66,7 +73,7 @@ class ReactChipsInput extends React.Component {
         return (
             <View>
                 <View style={{ paddingTop: 18, marginTop: 15 }}>
-                    <Text style={labelStyle}>
+                    <Text style={[defaultLabel, defaultLabelTextStyle, labelTextStyle]}>
                         {inputLabel}
                     </Text>
                     <TextInput
