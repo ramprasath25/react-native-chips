@@ -20,7 +20,11 @@ class ReactChipsInput extends React.Component {
         });
     }
     handleFocus = () => { this.setState({ isFocused: true }) }
-    handleChangeText = (text) => { this.setState({ inputText: text }) }
+    handleChangeText = (text) => { 
+        const {onChangeText} = this.props
+        onChangeText(text)
+        this.setState({ inputText: text }) 
+    }
     removeChip = (index) => {
         const newArray = [...this.state.chips]
         newArray.splice(index, 1);
